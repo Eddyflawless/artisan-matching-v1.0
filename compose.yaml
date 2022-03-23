@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  artisan-matching-service:
+    build:
+      context: .
+      dockerfile: dockerfile
+    volumes: 
+      - ./src:/home/app
+    environment:
+      - APP_DEBUG=true
+      - APP_ENVIRONMENT=dev  
+
+volumes: 
+  redis-vcache:
+    driver: local          
